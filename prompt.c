@@ -30,6 +30,10 @@ void prompt(char **av, char **env)
 			write(1, "commandme$ ", 12);
 		}
 		characters_read = getline(&input, &input_size, stdin);
+		if (characters_read == 1)
+		{
+			continue;
+		}
 		if (characters_read == -1)
 		{
 			free(input);
